@@ -12,6 +12,6 @@ public class ViaAlphaAPI {
     }
     
     public boolean isEnabled() {
-        return true;
+        return instance != null;
     }
 }
