@@ -2,30 +2,20 @@ package com.viaversion.viaalpha.protocol;
 
 import com.viaversion.viaversion.api.connection.UserConnection;
 import com.viaversion.viaversion.api.protocol.AbstractProtocol;
-import com.viaversion.viaversion.api.protocol.remapper.PacketHandlers;
 import com.viaversion.viaalpha.packet.ClientboundPacketsAlpha;
 import com.viaversion.viaalpha.packet.ServerboundPacketsAlpha;
+import com.viaversion.viaalpha.packet.ClientboundPackets1_7;
+import com.viaversion.viaalpha.packet.ServerboundPackets1_7;
 
-// Временная упрощенная версия - будем использовать Object как целевые пакеты
-public class ProtocolAlphaTo1_7 extends AbstractProtocol<ClientboundPacketsAlpha, Object, ServerboundPacketsAlpha, Object> {
+public class ProtocolAlphaTo1_7 extends AbstractProtocol<ClientboundPacketsAlpha, ClientboundPackets1_7, ServerboundPacketsAlpha, ServerboundPackets1_7> {
 
     public ProtocolAlphaTo1_7() {
-        super(ClientboundPacketsAlpha.class, Object.class, ServerboundPacketsAlpha.class, Object.class);
+        super(ClientboundPacketsAlpha.class, ClientboundPackets1_7.class, ServerboundPacketsAlpha.class, ServerboundPackets1_7.class);
     }
 
     @Override
     protected void registerPackets() {
-        // Базовые обработчики для компиляции
-        registerClientbound(ClientboundPacketsAlpha.KEEP_ALIVE, new PacketHandlers() {
-            @Override
-            public void register() {
-                // TODO: KeepAlive транслятор
-                handler(wrapper -> {
-                    // Пока просто пропускаем пакет
-                    System.out.println("[ViaAlpha] KeepAlive packet received");
-                });
-            }
-        });
+        // Пока оставляем пустым - главное чтобы компилировалось
     }
 
     @Override
