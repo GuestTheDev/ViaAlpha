@@ -1,3 +1,4 @@
+import com.viaversion.viaversion.api.type.Types;
 package com.viaversion.viaalpha.protocol;
 
 import com.viaversion.viaversion.api.connection.UserConnection;
