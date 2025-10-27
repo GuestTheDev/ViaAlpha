@@ -1,5 +1,7 @@
 package com.viaversion.viaalpha;
 
+import com.viaversion.viaalpha.protocol.ProtocolProviderAlpha;
+
 public class ViaAlphaAPI {
     private static ViaAlphaAPI instance;
     
@@ -13,5 +15,11 @@ public class ViaAlphaAPI {
     
     public boolean isEnabled() {
         return instance != null;
+    }
+    
+    // Метод для инициализации ViaAlpha
+    public static void init() {
+        ProtocolProviderAlpha.register();
+        System.out.println("[ViaAlpha] Initialized successfully!");
     }
 }
